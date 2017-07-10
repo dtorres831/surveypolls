@@ -1,0 +1,33 @@
+<div ng-controller='pollsController'>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" >POLLS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#!/dashboard">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="#!/newpolls">New Polls <span class="sr-only">(current)</span></a></li>
+      </ul> 
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout">Logout</a></li>
+      </ul>    
+    </div>
+  </div>
+  </nav>
+  <h2>Create a poll and answers here:</h2>
+  <form  name="form" class="form-group">
+    <div class="col-xs-12">
+      
+     <input class="form-control" type="text" ng-model='newPoll.question' placeholder='question for poll' ><br>
+    </div>
+    <div class="col-xs-6">
+      <input class="form-control" type="text" ng-model='newPoll.one' placeholder="option 1" required><br>
+      <input class="form-control" type="text" ng-model='newPoll.two' placeholder="option 2" required><br>
+      <input class="form-control" type="text" ng-model='newPoll.three' placeholder="option 3" required><br>
+      <input class="form-control" type="text" ng-model='newPoll.four' placeholder="option 4" required><br>
+      <button type="submit" class="btn btn-primary" ng-click='create()' ng-disabled="form.$invalid">Create Poll</button>
+    </div>
+  </form>
+</div>
+      

@@ -1,0 +1,40 @@
+<div ng-controller='pollsController' class="row">
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" >POLLS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#!/dashboard">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="#!/newpolls">New Polls <span class="sr-only">(current)</span></a></li>
+      </ul> 
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout">Logout</a></li>
+      </ul>    
+    </div>
+  </div>
+  </nav>
+  <div class="col-md-6">
+    <h2>{{cur_poll.question}}</h2>
+    click on the vote button to choose one
+    <table class="table">
+      <thead>
+        <tr>
+          <th>option</th>
+          <th >current count on votes</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat='option in cur_poll.option'>
+          <td>{{option.text}}</td>
+          <td >{{option.votes}}</td>
+          <td><button type="button" ng-click='vote($index)'>vote</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+    
+

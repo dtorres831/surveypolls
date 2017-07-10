@@ -1,0 +1,42 @@
+<div ng-controller= 'userController' class="row">
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" >POLLS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#!/dashboard">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="#!/newpolls">New Polls <span class="sr-only">(current)</span></a></li>
+      </ul> 
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout">Logout</a></li>
+      </ul>    
+    </div>
+  </div>
+  </nav>
+      <!--<a href="/logout">logout</a>
+      <a href="#!/newpolls">newpolls</a>-->
+    
+    <h1>current polls:</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>survey question</th>
+          <th>date posted </th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody ng-controller='pollsController'>
+        <tr ng-repeat='poll in polls'>
+          <td>{{poll._author.name}}</td>
+          <td><a href="#!/viewpoll/{{poll._id}}" >{{poll.question}}</a></td>
+          <td >{{poll.date|date:medium}}</td>
+          <td ng-if="curUser.name == poll._author.name"><a href='' ng-click='delete(poll._id)'>delete</a></td>
+          <td ng-if="curUser.name != poll._author.name"> click on poll</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

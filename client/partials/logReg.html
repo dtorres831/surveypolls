@@ -1,0 +1,15 @@
+<div ng-controller='userController' class="row">
+  <div class="col-xs-12 col-sm-10 col-md-3 col-sm-offset-1 col-mdoffset-2">
+    <h1>Poll Survey</h1>
+    <h3>Please Login</h3>
+    <form name="form">
+      <div  class="form-group">
+        <input type="text"  ng-model='user.name' placeholder="name please" class="form-control" required><br>
+        <button class="btn btn-primary" ng-click="login()" type="submit" ng-disabled="form.$invalid" >Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+        
+        
+    
